@@ -2,6 +2,7 @@ import { MongoClient } from 'mongodb';
 import express from 'express';
 
 const app = express();
+const port = process.env.PORT || 3001;
 
 const databaseUrl = 'mongodb+srv://admin:admin@cluster0.tthq04f.mongodb.net/?retryWrites=true&w=majority';
 const client = new MongoClient(databaseUrl);
@@ -54,6 +55,6 @@ app.get('/deleteDone',async (req,res)=>{
   }
 });
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
   console.log('rodando');
 })
